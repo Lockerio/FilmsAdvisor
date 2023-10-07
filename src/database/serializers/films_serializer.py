@@ -1,6 +1,6 @@
 from sqlalchemy import func
 
-from src.models import Film
+from src.database.models.films_model import Film
 
 
 class FilmSerializer:

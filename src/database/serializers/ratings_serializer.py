@@ -1,4 +1,4 @@
-from src.models import Rating
+from src.database.models.ratings_model import Rating
 
 
 class RatingSerializer:

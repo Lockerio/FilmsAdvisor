@@ -1,4 +1,4 @@
-from src.serializers.films_serializer import FilmSerializer
+from src.database.serializers.films_serializer import FilmSerializer
 
 
 class FilmService:

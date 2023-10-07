@@ -1,4 +1,4 @@
-from src.models import User
+from src.database.models.users_model import User
 
 
 class UserSerializer:

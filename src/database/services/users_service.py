@@ -1,6 +1,6 @@
 import hashlib
 
-from src.serializers.users_serializer import UserSerializer
+from src.database.serializers.users_serializer import UserSerializer
 
 
 class UserService:

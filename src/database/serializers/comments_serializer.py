@@ -1,4 +1,4 @@
-from src.models import Comment
+from src.database.models.comments_model import Comment
 
 
 class CommentSerializer:

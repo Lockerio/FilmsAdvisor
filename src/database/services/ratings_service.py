@@ -1,4 +1,4 @@
-from src.serializers.ratings_serializer import RatingSerializer
+from src.database.serializers.ratings_serializer import RatingSerializer
 
 
 class RatingService:

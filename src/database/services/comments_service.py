@@ -1,4 +1,4 @@
-from src.serializers.comments_serializer import CommentSerializer
+from src.database.serializers.comments_serializer import CommentSerializer
 
 
 class CommentService:
