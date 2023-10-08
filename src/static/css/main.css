@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comfortaa', cursive;
+    font-size: 1.2em;
+}
+
+:root {
+    --background-menu-bar: #EBDECE;
+    --background-color: #EBE2D8;
+    --button-color: #CCC0AF;
+    --button-color-hover: #8F8A85;
+    --button-search-color: #8F8A85;
+    --button-search-color-hover: #42403E;
+}
+
+body {
+    background: var(--background-color);
+}
+
+.header {
+    margin: 30px;
+    padding: 0 0 0 20px;
+}
+
+.text_bar {
+    border-radius: 5px;
+}
+
+.submit_button {
+    border-radius: 5px;
+    background: var(--button-search-color);
+}
+
+.submit_button:hover {
+    border-radius: 5px;
+    background: var(--button-search-color-hover);
+}
+
+.films {
+    margin: 20px;
+    list-style-type: none;
+}
+
+.film {
+    border-radius: 5px;
+    margin: 10px;
+    padding: 20px;
+    background: var(--button-color);
+}
+
+.film:hover {
+    border-radius: 5px;
+    padding: 20px;
+    background: var(--button-color-hover);
+}
+
+.film_detail_view_link {
+    text-decoration: none;
+    color: #000;
+}

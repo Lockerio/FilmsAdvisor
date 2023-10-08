@@ -1,6 +1,6 @@
 from sqlalchemy import func
 
-from src.database.models.films_model import Film
+from src.database.models import Film
 
 
 class FilmSerializer:
@@ -8,6 +8,7 @@ class FilmSerializer:
         self.session = session
 
     def get_one(self, film_id):
+        print(self.session.query(Film).get(film_id))
         return self.session.query(Film).get(film_id)
 
     def get_random_one_by_genre(self, genre):
