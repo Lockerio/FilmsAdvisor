@@ -8,8 +8,10 @@ class FilmSerializer:
         self.session = session
 
     def get_one(self, film_id):
-        print(self.session.query(Film).get(film_id))
         return self.session.query(Film).get(film_id)
+
+    def get_one_by_title(self, title):
+        return self.session.query(Film).filter_by(title=title).first()
 
     def get_random_one_by_genre(self, genre):
         return self.session.query(Film).filter_by(genre=genre).order_by(func.random()).first()
@@ -24,12 +26,10 @@ class FilmSerializer:
         film = Film(**data)
         self.session.add(film)
         self.session.commit()
-        return film
 
     def update(self, film):
         self.session.add(film)
         self.session.commit()
-        return film
 
     def delete(self, film_id):
         film = self.get_one(film_id)
