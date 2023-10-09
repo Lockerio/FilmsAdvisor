@@ -8,11 +8,12 @@ class Validator:
             for item in arg:
                 Validator.assert_valid_string(item)
 
-        if isinstance(arg, dict):
-            for item in arg:
+        elif isinstance(arg, dict):
+            for item in arg.values():
                 if isinstance(item, str):
                     Validator.assert_valid_string(item)
 
-        if arg and not arg.isspace():
-            return
-        raise Exception('Вы ввели пустую строку!')
+        else:
+            if arg and not arg.isspace():
+                return
+            raise Exception('Вы ввели пустую строку!')

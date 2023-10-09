@@ -8,8 +8,9 @@ class Formatter:
             for item in arg:
                 Formatter.format_string(item)
 
-        if isinstance(arg, dict):
-            for item in arg:
+        elif isinstance(arg, dict):
+            for item in arg.values():
                 if isinstance(item, str):
                     Formatter.format_string(item)
-        arg.lower()
+        else:
+            arg.lower()
