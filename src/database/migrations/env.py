@@ -7,10 +7,7 @@ from alembic import context
 
 from src.database.config import DB_URL
 from src.database.database import Base
-from src.database.models.comments_model import Comment
-from src.database.models.films_model import Film
-from src.database.models.ratings_model import Rating
-from src.database.models.users_model import User
+from src.database.models import User, Film, Comment, Rating
 
 
 # this is the Alembic Config object, which provides
