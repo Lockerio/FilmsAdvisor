@@ -1,4 +1,5 @@
 from src.database.serializers.films_serializer import FilmSerializer
+from src.database.utils.formatter import Formatter
 from src.database.utils.validator import Validator
 
 
@@ -25,16 +26,12 @@ class FilmService:
         self.serializer.update(data)
 
     def create(self, data):
-        Validator.assert_valid_string()
-
-
+        Validator.assert_valid_string(data)
+        Formatter.format_string(data)
 
         if self.get_one_by_title(data['title']):
             raise Exception('Фильм с таким названием уже существует!')
         self.serializer.create(data)
-
-
-
 
     def delete(self, film_id):
         self.serializer.delete(film_id)
