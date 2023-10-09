@@ -14,7 +14,7 @@ def main():
     return render_template("main.html", films=films)
 
 
-@films_blueprint.route("/film/<int:film_id>")
+@films_blueprint.route('/film/<int:film_id>')
 def detail_film(film_id):
     raw_film = filmService.get_one(film_id)
     film = filmDataHelper.format_film(raw_film)
@@ -34,5 +34,24 @@ def random_film():
     selected_genre = request.form.get('genre')
     film = filmService.get_random_one_by_genre(selected_genre)
     film_id = film.id
-    return redirect(url_for("films_blueprint.detail_film", film_id=film_id))
+    return redirect(url_for('films_blueprint.detail_film', film_id=film_id))
 
+
+@films_blueprint.route('/create_film')
+def create_film():
+    return render_template('create_film.html')
+
+
+@films_blueprint.route('/finish_film_creation', methods=['POST'])
+def finish_film_creation():
+    try:
+        film_to_create_data = {
+            'title': request.form.get('title'),
+            'genre': request.form.get('genre')
+        }
+        filmService.create(film_to_create_data)
+    except Exception as e:
+        return render_template('create_film.html', error_message=e)
+
+    success_message = "Фильм успешно добавлен!"
+    return render_template('create_film.html', success_message=success_message)
