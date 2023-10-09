@@ -53,5 +53,4 @@ class FilmDataHelper:
                 for comment in film.comments
             ]
         }
-
         return formatted_film

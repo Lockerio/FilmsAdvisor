@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>{{ genre }}</title>
+</head>
+<body>
+    <div class="header">
+        <form action="/random_film" method="post">
+            <input type="hidden" name="genre" value="{{ genre }}">
+            <input class="submit_button" type="submit" value="Дайте мне случайный фильм">
+        </form>
+    </div>
+
+    <ul class="films">
+        {% for film in films %}
+        <a class="film_detail_view_link" href="/film/{{ film.id }}">
+            <li class="film">
+                {{ film.title }}: {{ film.genre }}. Рейтинг: {{ film.rating }}
+            </li>
+        </a>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>Главная</title>
+</head>
+<body>
+    <div class="header">
+        <form action="/films_by_genre" method="post">
+            <input class="text_bar" type="text" name="genre" placeholder="Введите жанр">
+            <input class="submit_button" type="submit" value="Найти">
+        </form>
+    </div>
+
+    <ul class="films">
+        {% for film in films %}
+        <a class="film_detail_view_link" href="/film/{{ film.id }}">
+            <li class="film">
+                {{ film.title }}: {{ film.genre }}. Рейтинг: {{ film.rating }}
+            </li>
+        </a>
+        {% endfor %}
+    </ul>
+</body>
+</html>
