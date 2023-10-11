@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comfortaa', cursive;
+    font-size: 1.2em;
+}
+
+:root {
+    --background-menu-bar: #EBDECE;
+    --background-color: #EBE2D8;
+    --button-color: #CCC0AF;
+    --comment-author-color: #8F8A85;
+    --button-search-color: #8F8A85;
+    --button-search-color-hover: #42403E;
+}
+
+body {
+    background: var(--background-color);
+}
+
+.title {
+    padding: 50px 0 20px 50px;
+    font-size: 1.6em;
+    font-weight: 900;
+}
+
+.description {
+    padding: 0 0 20px 50px;
+}
+
+.comment {
+    margin: 30px;
+    border-radius: 5px;
+    background: var(--button-color);
+    font-size: 0.65em;
+    list-style-type: none;
+}
+
+.comment_author {
+    padding: 15px 0 0 15px ;
+    border-radius: 5px 5px 0 0;
+    background: var(--comment-author-color);
+}
+
+.comment_text {
+    padding: 15px 0 0 15px ;
+}

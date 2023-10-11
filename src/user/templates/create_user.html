@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>Создание фильма</title>
+</head>
+<body>
+    <div class="header">
+        <form action="/finish_user_creation" method="post">
+            <input class="text_bar" type="text" name="first_name" placeholder="Имя">
+            <input class="text_bar" type="text" name="last_name" placeholder="Фамилия">
+            <input class="text_bar" type="text" name="email" placeholder="Електронная почта">
+            <input class="text_bar" type="text" name="password" placeholder="Пароль">
+            <input class="submit_button" type="submit" value="Найти">
+        </form>
+    </div>
+
+    <div class="main">
+        {{ error_message }}
+    </div>
+</body>
+</html>

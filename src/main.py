@@ -1,9 +1,11 @@
 from flask import Flask
 
-from src.films.views import films_blueprint
+from src.film.views import film_blueprint
+from src.user.views import user_blueprint
 
 app = Flask(__name__)
-app.register_blueprint(films_blueprint)
+app.register_blueprint(film_blueprint)
+app.register_blueprint(user_blueprint)
 
 
 if __name__ == '__main__':
