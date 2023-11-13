@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, redirect, url_for
 
 from src.database.container import userService
 
@@ -8,7 +8,7 @@ user_blueprint = Blueprint('user_blueprint', __name__, template_folder='template
 
 @user_blueprint.route('/create_user')
 def create_user():
-    return render_template('create_user')
+    return render_template('create_user.html')
 
 
 @user_blueprint.route('/finish_user_creation')
@@ -24,9 +24,6 @@ def finish_user_creation():
     except Exception as e:
         return render_template('create_film.html', error_message=e)
 
-    return render_template('create_film.html')
+    return redirect(url_for('films_blueprint.detail_film', film_id=film_id))
 
 
-@user_blueprint.route('/sign_in')
-def sign_in():
-    return render_template('sign_in')
